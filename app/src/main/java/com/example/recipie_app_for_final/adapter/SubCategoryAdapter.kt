@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.recipie_app_for_final.R
 import com.example.recipie_app_for_final.entities.Recipies
 import kotlinx.android.synthetic.main.item_main_cat.view.*
@@ -29,6 +30,7 @@ class SubCategoryAdapter: RecyclerView.Adapter<SubCategoryAdapter.RecipieViewHol
         return arraySubCat.size
     }
     override fun onBindViewHolder(holder: RecipieViewHolder, position: Int) {
-        holder.itemView.tv_dish_name.text = arraySubCat[position].dishName
+        holder.itemView.tv_dish_name.text = arraySubCat[position].strMeal
+        Glide.with(holder.itemView.context).load(arraySubCat[position].strMealThumb).into(holder.itemView.img_dish_sub)
     }
 }

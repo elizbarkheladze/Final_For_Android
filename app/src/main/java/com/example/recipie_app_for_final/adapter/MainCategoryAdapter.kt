@@ -7,21 +7,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recipie_app_for_final.R
-import com.example.recipie_app_for_final.entities.CategoryItems
-import com.example.recipie_app_for_final.entities.Recipies
+import com.example.recipie_app_for_final.entities.Category
 import kotlinx.android.synthetic.main.item_main_cat.view.*
 import kotlinx.android.synthetic.main.item_sub_cat.view.*
 import kotlinx.android.synthetic.main.item_sub_cat.view.tv_dish_name
 
 class MainCategoryAdapter: RecyclerView.Adapter<MainCategoryAdapter.RecipieViewHolder>() {
     var ctx: Context? = null
-    var arrayMainCat = ArrayList<CategoryItems>()
+    var arrayMainCat = ArrayList<Category>()
     class RecipieViewHolder(view: View): RecyclerView.ViewHolder(view){
 
     }
 
-    fun setData(arrData : List<CategoryItems>){
-        arrayMainCat = arrData as ArrayList<CategoryItems>
+    fun setData(arrData : List<Category>){
+        arrayMainCat = arrData as ArrayList<Category>
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipieViewHolder {

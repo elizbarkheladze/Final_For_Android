@@ -1,18 +1,6 @@
 package com.example.recipie_app_for_final.entities
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import java.io.Serializable
-
-
-@Entity(tableName = "Recipies")
 data class Recipies(
-    @PrimaryKey(autoGenerate = true)
-    var id:Int,
-
-    @ColumnInfo(name = "dishName")
-    var dishName:String
-
-
-) : Serializable
+    val strMeal: String,
+    val strMealThumb: String,
+)

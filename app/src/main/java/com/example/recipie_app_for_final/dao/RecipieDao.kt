@@ -6,19 +6,17 @@ import androidx.room.OnConflictStrategy
 
 import androidx.room.Query
 import com.example.recipie_app_for_final.entities.Category
-import com.example.recipie_app_for_final.entities.CategoryItems
-
 
 @Dao
 interface RecipieDao {
 
     @Query("SELECT * FROM category ORDER BY id DESC")
-    suspend fun getAllCategory(): List<CategoryItems>
+    suspend fun getAllCategory(): List<Category>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCategory(categoryItems: CategoryItems?)
+    fun insertCategory(category: Category?)
 
-    @Query("DELETE FROM categoryitems")
-    suspend fun clearDb()
+    @Query("DELETE FROM category")
+    fun clearDb()
 
 }
